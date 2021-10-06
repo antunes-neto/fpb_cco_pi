@@ -1,0 +1,3 @@
+A2 - Documento de Requisitos
+
+Lista de Processamentos de imagens que serão produzidos pelo aluno ou dupla.
