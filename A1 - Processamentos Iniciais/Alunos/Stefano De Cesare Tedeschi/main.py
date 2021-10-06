@@ -1,9 +1,9 @@
 '''
 ===================================================================================================================
-
+IMPORTANTE eu mandei uma versão mais antiga no blackboard essa é a mais nova
 Tutorial de execução para o codigo abaixo
 
-1º passo - Baixe e instale o Python no computador[url: ]
+1º passo - Baixe e instale o Python no computador[url para download direto: https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe]
 (não precisa de nenhuma configuração especial só pressione proximo)
 2º passo - Aperte "Ctrl + Shift + X" e busque pela extensão oficial da Microsoft pro Python e a instale
 (pesquisar por Python)
@@ -22,7 +22,6 @@ passar por todos os pixels da imagem
 
 PS: alterar as cores remove o efeito de greyscale e/ou negativo, então use primeiro os sliders de cores e depois
 aplique o efeito de imagem
-PSS: IMPORTANTE eu mandei uma versão mais antiga no blackboard essa é a mais nova
 Feito por Stefano De Cesare Tedeschi
 '''
 from tkinter import *
