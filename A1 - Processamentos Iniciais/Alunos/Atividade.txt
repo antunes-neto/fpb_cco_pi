@@ -1,0 +1,74 @@
+﻿Aluno: Joaquim Felix Da Silva filho
+
+
+Recomendo utilizar o Google colab 
+
+__________________________________________________________________________________________
+
+#deixando a imagem cinza
+from PIL import Image # importando a biblioteca de imagem pillow
+
+
+img = Image.open('/content/claudio-schwarz-wsOMLd7Xs1c-unsplash.jpg') # abrindo a foto 
+imgGray = img.convert('L')  # convertendo a imagem em cinza
+imgGray.save('test_gray.jpg') # salvando a imagem 
+
+____________________________________________________________________________________________
+
+#negativo
+from PIL import Image # importando a biblioteca de imagem pillow
+
+
+def negativo(img:Image) -> Image: # função para inverter a imagem 
+    neg = Image.new(img.mode, img.size, "red") # recebe a imagem e deixa em vermelho 
+
+
+    w,h = img.size # tamanho da imagem
+    for i in range(w): 
+      for j in range(h):
+        r,g,b = img.getpixel((i,j)) # pega os pixel da imagem 
+        neg.putpixel((i,j),(255-r,255-g,255-b)) # inverte as cores da imagem 
+    return neg
+
+
+img = Image.open('/content/claudio-schwarz-wsOMLd7Xs1c-unsplash.jpg')
+
+
+negativo(img).save('test.jpg') # salvar imagem
+
+__________________________________________________________________________________________
+
+
+#RGB
+import matplotlib.pyplot as plt # importando a biblioteca matplotlib
+
+
+# importando  biblioteca skimage
+from skimage import color  
+from skimage import img_as_float 
+from skimage import io  
+
+
+img = io.imread('/content/claudio-schwarz-wsOMLd7Xs1c-unsplash.jpg') #lendo imagem
+image = color.gray2rgb(img) # Representação RGB da imagem em nível de cinza.
+
+
+# Cores 
+red  = [1, 0, 0] 
+green = [0, 1, 0]
+blue = [0, 0, 1]
+
+
+# Criando uma  figura com 3 colunas 
+fig, (ax1, ax2, ax3) =  plt.subplots(ncols=3, figsize=(8, 4),
+                               sharex=True, sharey=True)  
+
+
+# Aplicando as cores na imagem 
+ax1.imshow(red * image) 
+ax2.imshow(green * image)  
+ax3.imshow(blue * image)
+
+
+#salvando
+fig.savefig('RGB.jpg')
