@@ -1,0 +1,9 @@
+body {
+        font-family: arial;
+        margin: 10px;
+}
+
+.imgExibir {
+        max-height: 500px;
+        max-width: 500px;
+}
