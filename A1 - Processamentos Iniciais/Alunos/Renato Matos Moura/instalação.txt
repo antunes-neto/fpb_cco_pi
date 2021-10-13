@@ -1,0 +1,10 @@
+Python 3.9.0
+Visual studio code
+Addons visual studio: Python, Pylance, Python Image Preview, Python Preview, Python c++ Debugger.
+
+Cmd: Instalar biblioteca python -m pip install pillow
+cmd: Instalar biblioteca python -m pip install -U scikit-image
+cmd: Instalar biblioteca python -m pip install opencv-python
+cmd: Instalar biblioteca python -m pip install numpy
+cmd: Instalar biblioteca python -m pip install scikit-image
+cmd: Instalar biblioteca python -m pip install matplotlib
