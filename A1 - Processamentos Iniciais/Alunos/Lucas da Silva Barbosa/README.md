@@ -69,6 +69,10 @@ $ python app.py image.jpg -invert
 - `-invert`: Invert the color of the image and save of it in the same folder
 - `-gray_scale`: Convert the image to gray scale and save of it in the same folder
 - `-rgb`: Split the image into its red, green and blue channels then merge the channels and save in the same folder
+- `-colorized_red`: Split the image, colorize the red channel of it then save in the same folder
+- `-colorized_green`: Split the image, colorize the green channel of it then save in the same folder
+- `-colorized_blue`: Split the image, colorize the blue channel of it then save in the same folder
+
 
 <br>
 
