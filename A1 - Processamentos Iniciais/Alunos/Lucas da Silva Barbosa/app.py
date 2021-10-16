@@ -40,36 +40,3 @@ try:
         print('Invalid flag')
 except:
     print("Error: No image found")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# img = cv2.imread('test.jpg')
-# blue, green, red = cv2.split(img) # Split the image into its channels
-
-# cv2.imshow("red image", red) # Display the red channel in the image
-# # Display the red channel in the image
-
-# cv2.waitKey(0) 
-
-# cv2.destroyAllWindows() # Close all windows
