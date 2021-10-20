@@ -2,13 +2,11 @@
 #
 #********Guia para Executar************
 #
-# (Opção 1) Abrir o arquivo: conversor.exe (Para NÃO instalar os modulos e executar o programa);
-#
-#           OU  Instalar os modulos e rodar o código no VSCode;
-#
-# (Opção 2) pip install pillow
+# (Opção 1) Abrir o arquivo: conversor.exe (Para NÃO instalar os modulos e executar o programa, mas o windows defender não vai reconhecer);
+# (Opção 2) Abrir o link https://replit.com/@AlefeGuedes/DrabBusyCell#main.py	
+# (Opção 3) Instalar os modulos e rodar o código no VSCode;
+# 	    pip install pillow
 #           pip install opencv-python
-#           Abrir arquivo no VSCode
 
 
 from tkinter import *
