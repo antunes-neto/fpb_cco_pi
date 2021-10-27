@@ -1,1 +1,71 @@
+:: Documento de Requisitos :: FPB 2021.2 | Processamento de Imagens
+
+HISTÓRICO DE REVISÃO
+
+V.0.0.1 | 27.10.2021 - Antunes Neto :: Estruturação inicial do Documento
+
+::
+
+Processamento de Imagem N2
+Especificação de Requisito de Software
+para IMAGE NODE
+
+V.0.0.1
+
+::
+
+1. INTRODUÇÃO
+
+Este projeto tem como objetivo oportunizar a implementação de componentes de processamento de imagem como atividade de 2 unidade para os alunos de CCO da FPB.
+
+O NODE IMAGE é um sistema de processamento de imagem que deve ser contruído na linguagem de maior desenvoltura do aluno, podendo ser individual ou em dupla. A restrição de linguagem é feita pelas ferramentas de acompanhamento, devendo ser compatíveis com:
+> GIT
+> Visual Studio Code
+
+Qualquer AddOns deve ser indicado no README.txt do Projeto do Aluno.
+
+O NODE IMAGE é um sistema de processamento de imagem não destrutivo, onde o usuário possui controle e feedback visual em tempo real das modificações realizadas na tela do sistema. O projeto terá um grupo de requisitos COMUM a todos os projetos e outro grupo de requisitos que os alunos poderão optar pela implementação de parte dele. Essa lista será consolidada nas próximas versões deste documento.
+
+1.1 Finalidade
+Este projeto, individual ou em dupla, é componente A5 de nota da FPB. A finalidade do NODE IMAGE é ser uma ferramenta de edição de imagens para redes sociais. 
+
+1.2 Escopo
+
+1.3 Definições, Acronimos e Abreviações
+
+1.4 referências
+
+::
+
+2. DESCRIÇÃO GERAL
+
+3. REQUISITOS
+
+3.1 Requisitos Funcionais
+
+3.1.1 Palco de Imagem
+O palco de Imagem é o espaço do sistema onde o usário irá 
+ O sistema deve desenhar a imagem em uma janela;
+O usuário deve poder indicar a altura e largura da área útil do palco da Imagem;
+
+3.1.2. Abrir um Imagem
+2.1 
+
+
+3.2 Requisitos de Performance
+
+
+3.3 Atributos do Sistema de Software
+
+3.3.1 Restrições do Design
+
+3.3.2 Interfaces
+
+3.3.2.1 Interface do Usuário
+
+3.3.2.2 Interface de Hardware
+
+3.4 Requisitos de Usabilidade
+
+3.5 Requisitos de Confiabilidade
 
