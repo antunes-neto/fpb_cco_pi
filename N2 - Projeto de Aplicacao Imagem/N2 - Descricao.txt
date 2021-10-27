@@ -3,8 +3,12 @@
 HISTÓRICO DE REVISÃO
 
 V.0.0.1 | 27.10.2021 - Antunes Neto :: Estruturação inicial do Documento
+V 0.0.2 | 27.10.2021 - Antunes Neto :: Requisitos Bloco Comum
+
 
 ::
+
+
 
 Processamento de Imagem N2
 Especificação de Requisito de Software
@@ -12,44 +16,108 @@ para IMAGE NODE
 
 V.0.0.1
 
+
+
 ::
+
+
 
 1. INTRODUÇÃO
 
-Este projeto tem como objetivo oportunizar a implementação de componentes de processamento de imagem como atividade de 2 unidade para os alunos de CCO da FPB.
+Este projeto tem como objetivo oportunizar a implementação de componentes de processamento de imagem como atividade de 2 unidade para os alunos de CCO da FPB no 8º período.
 
 O NODE IMAGE é um sistema de processamento de imagem que deve ser contruído na linguagem de maior desenvoltura do aluno, podendo ser individual ou em dupla. A restrição de linguagem é feita pelas ferramentas de acompanhamento, devendo ser compatíveis com:
 > GIT
 > Visual Studio Code
 
-Qualquer AddOns deve ser indicado no README.txt do Projeto do Aluno.
+Qualquer AddOns deve ser indicado no README.txt do Projeto do Aluno, para ser instalado pelo professor na necessidade de testar o código.
 
-O NODE IMAGE é um sistema de processamento de imagem não destrutivo, onde o usuário possui controle e feedback visual em tempo real das modificações realizadas na tela do sistema. O projeto terá um grupo de requisitos COMUM a todos os projetos e outro grupo de requisitos que os alunos poderão optar pela implementação de parte dele. Essa lista será consolidada nas próximas versões deste documento.
+O NODE IMAGE é um sistema de processamento de imagem não destrutivo, onde o usuário possui controle e feedback visual em tempo real das modificações realizadas na imagem em uma tela do sistema. O projeto terá um grupo de requisitos compartilhados entre todos os projetos, chamado de BLOCO COMUM e outro grupo de requisitos que os alunos poderão optar pela implementação um número específico deles, chamdo de BLOCO EXTRA. A lista do BLOCO EXTRA será consolidada nas próximas versões deste documento.
 
 1.1 Finalidade
 Este projeto, individual ou em dupla, é componente A5 de nota da FPB. A finalidade do NODE IMAGE é ser uma ferramenta de edição de imagens para redes sociais. 
 
 1.2 Escopo
+No NODE IMAGE o usuário cria um novo documento de imagem, podendo indicar formatos para redes sociais, importar uma imagem no novo documento, modificar o tamanho da imagem e mover a imagem dentro do formato do documento, modificando a imagem e salvando o resultado final. O foco é um projeto não destrutivo da imagem, a imagem aberta no sistema deve poder ser acessada em qualquer fase da modificação.
+
+O BLOCO COMUM do projeto são as funcionalidades de área de trabalho, abrir imagem, modificar largura e comprimento da área de trabalho, modificar tamanho da imagem contida na área de trabalho, salvar imagem. O sistema deve ser capaz de abrir imagens do tipo JPG e PNG, salvando-as em JPG.
+
+O BLOCO EXTRA é o conjunto de ações de processamento de imagem que o aluno, ou dupla, deve modificar a imagem na área de trabalho. Cada tipo de processamento de imagem pode ser acessada sempre pelo o usuário e o usuário pode modificar a percentagem dessa moodificação antes de salvar a imagem final.
+
+1.2.1 NOTA | Critérios
+A nota da N2 possuí valor máximo de 10 e será dividida em:
+
+30% | Requisitos BOLCO COMUM - Existência de todos os requisitos do BLOCO COMUM validará 30% da nota;
+30% | Requisitos BLOCO EXTRA - Existência de << QUANTIDADE X >> requisitos do BLOCO EXTRA, qualquer que seja;
+20% | ORGANIZAÇÂO Código - Como o projeto está organizado no GIT, em termos de scripts, pastas e demais arquivos;
+20% | INTERFACE - Qualidade da interface produzida de manipulação da iamgem.
+
++10% | Requisito de Performance - 
+
+1.2.1.1 NOTAL | Qualificação dos Critérios de Nota
+Cada critério da nota será qualificado em 5 categorias, sendo a nota ajustada sempre para cima em caso de nota quebrada. A categorias são:
+0%  | Aprendiz - Não atendeu ao critério;
+30$ | Estagiário - Desenvolveu parte dos critérios indicados ou os critérios possuem muitos problemas;
+60% | Profissional Jr. - Desenvolveu mais da metade dos critérios indicados, ou os critérios possuem problemas;
+80% | Profissional Especialista - Desenvolveu quase todos os critérios indicados, ou os critérios possuem alguns problemas;
+100% | Profissional Sr. - Desenvolveu todos os critérios indicados, sem nenhum problema no critério;
+
 
 1.3 Definições, Acronimos e Abreviações
 
+1.3.1 Área de Trabalho 
+A Área de trabalho é o local que contém a prancheta do formato do documento e o espaço de movimentação da imagem aberta do documento.
+
+1.3.2 Prancheta
+A prancheta é a área útil do documento do NODE IMAGE com o formato escolhido pelo usuário. A área da prancheta funciona como uma mascara para o documento final que será salvo. A imagem final esta contida nesta área útil.
+
+1.3.3 Área do Documento/formato
+A Área do documento é definida pelo formato "x" por "y" (x,y), onde o "x" representa a largura e o "y" a altura. O ponto ZERO (0,0) do formato é o canto superior esquerdo. O formato do NODE IMAGE nesta versão terá o padrão em quantidade de PIXELS.
+
+
 1.4 referências
+
 
 ::
 
+
 2. DESCRIÇÃO GERAL
+
+O projeto NODE IMAGE é um editor de imagem que manipula o tamanho da imagem, suas informações de cores, brilho, contraste e adicionando efeitos. O uso do NODE IMAGE deve ser conduzido de forma que qualquer modificação, adição de efeitos deva ser acessível de forma que o usuário possa mudar a ordem dos efeitos, a porcentagem de ação do efeito e a aplicação ou não em tempo real sem a perda da informação original da imagem pelo sistema.
+
+
+::
+
 
 3. REQUISITOS
 
-3.1 Requisitos Funcionais
+Aqui será descrito os requisitos do sistema que o projeto NODE IMAGE deve apresentar como projeto N2 da disciplina de Processamento da Imagem. Os Requisitos são divididos entre Requisitps Funcionais e Requisitos de Performance. Os requisitos funcionais apresentão os recursos que o sistema deve apresentar, sendo subdividido em BLOCO COMUM e BLOCO EXTRA. Os Requisitos de Performance são as características de desempenho esperada do projeto.
 
-3.1.1 Palco de Imagem
-O palco de Imagem é o espaço do sistema onde o usário irá 
- O sistema deve desenhar a imagem em uma janela;
-O usuário deve poder indicar a altura e largura da área útil do palco da Imagem;
+3.1 Requisitos Funcionais | BLOCO COMUM
 
-3.1.2. Abrir um Imagem
-2.1 
+3.1.1 importar Imagem
+O sistema deve importar utilizando-se de um sistema WIMP qualquer imagem presente no device do usuário. Ao importar uma imagem no sistema ela deve aparecer na prancheta da Área de trabalho. O tamanho da imagem importada deve se ajustar ao palco repeitando a maior dimensão, sendo esta ajustada para que toda a imagem seja visivel no palco.
+
+3.1.2 Área de trabalho / Prancheta
+A Área de trabalho é o espaço do sistema onde o usário irá manipular a posição e escala da imagem em relação a Prancheta. A prancheta é o lugar onde o sistema deve desenhar a imagem. A prancheta possui a propriedade de tamanho que será manipulada pelo usuário. O usuário poderá modificar o tamanho da imagem improtada, aumentando ou diminuindo sua escala porém sem que o sistema perca Informação do tamanho original da imagem.
+
+3.1.3 Salvar Imagem
+Ao salvar a imagem o usuário deverá usar o mecanismo WIMP para escolher onde quer salvar a imagem resultante da prancheta do sistema NODE IMAGE.
+
+3.2 Requisitos Funcionais | BLOCO EXTRA
+
+3.2.1 Saturar e Desaturar a Imagem;
+
+3.2.2 Aumentar e diminuir o Contraste da Imagem;
+
+3.2.3 Aumentar e Diminuir o Brilho da Imagem;
+
+3.2.4 Aumentar ou Diminuir as Sombras da Imagem;
+
+3.2.5 Modificar a MATIZ da imagem;
+
+3.2.6 ....
+
 
 
 3.2 Requisitos de Performance
