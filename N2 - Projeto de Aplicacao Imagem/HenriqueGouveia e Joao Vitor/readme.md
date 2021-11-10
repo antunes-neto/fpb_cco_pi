@@ -2,7 +2,7 @@
 
 Feito com JavaScript, Html e CSS. **Em produção**
 
-###Para rodar com facilidade: plugin vscode live server 
+###Para rodar com facilidade: plugin vscode live server  (De quem?)
 
 Manual para evitar os bugs existentes kkkkk:
  - começar a mexer nos filtros pelo último, pode bugar e ficar preta a imagem hadajksdah
