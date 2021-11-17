@@ -4,7 +4,7 @@ HISTÓRICO DE REVISÃO
 
 V.0.0.1 | 27.10.2021 - Antunes Neto :: Estruturação inicial do Documento
 V 0.0.2 | 27.10.2021 - Antunes Neto :: Requisitos Bloco Comum
-
+V 0.1   | 17.11.2021 - Antunes Neto :: Requisitos Bloco Extra e revisão Bloco Comum
 
 ::
 
@@ -14,7 +14,10 @@ Processamento de Imagem N2
 Especificação de Requisito de Software
 para IMAGE NODE
 
-V.0.0.1
+V.0.1
+
+
+Prof. Antunes Neto
 
 
 
@@ -24,13 +27,15 @@ V.0.0.1
 
 1. INTRODUÇÃO
 
-Este projeto tem como objetivo oportunizar a implementação de componentes de processamento de imagem como atividade de 2 unidade para os alunos de CCO da FPB no 8º período.
+Este projeto tem como objetivo oportunizar a implementação de componentes de processamento de imagem como atividade de 2º unidade para os alunos de CCO da FPB no 8º período.
 
 O NODE IMAGE é um sistema de processamento de imagem que deve ser contruído na linguagem de maior desenvoltura do aluno, podendo ser individual ou em dupla. A restrição de linguagem é feita pelas ferramentas de acompanhamento, devendo ser compatíveis com:
 > GIT
 > Visual Studio Code
 
 Qualquer AddOns deve ser indicado no README.txt do Projeto do Aluno, para ser instalado pelo professor na necessidade de testar o código.
+
+TODOS os alunos de devem postar a atividade no BB e indicar o outro aluno da dupla, se porduzido em dupla.
 
 O NODE IMAGE é um sistema de processamento de imagem não destrutivo, onde o usuário possui controle e feedback visual em tempo real das modificações realizadas na imagem em uma tela do sistema. O projeto terá um grupo de requisitos compartilhados entre todos os projetos, chamado de BLOCO COMUM e outro grupo de requisitos que os alunos poderão optar pela implementação um número específico deles, chamdo de BLOCO EXTRA. A lista do BLOCO EXTRA será consolidada nas próximas versões deste documento.
 
@@ -54,7 +59,7 @@ A nota da N2 possuí valor máximo de 10 e será dividida em:
 
 +10% | Requisito de Performance - 
 
-1.2.1.1 NOTAL | Qualificação dos Critérios de Nota
+1.2.1.1 NOTA | Qualificação dos Critérios de Nota
 Cada critério da nota será qualificado em 5 categorias, sendo a nota ajustada sempre para cima em caso de nota quebrada. A categorias são:
 0%  | Aprendiz - Não atendeu ao critério;
 30$ | Estagiário - Desenvolveu parte dos critérios indicados ou os critérios possuem muitos problemas;
@@ -76,10 +81,29 @@ A Área do documento é definida pelo formato "x" por "y" (x,y), onde o "x" repr
 
 
 1.4 referências
+GIMP - https://www.gimp.org/
+Photopea - https://www.photopea.com/
+Fotor - https://www.fotor.com/pt/
 
+1.4.1 Guia de Processamento de imagem
+
+Python, exemplos:
+
+https://pythongeeks.org/image-processing-in-python/
+
+https://python.plainenglish.io/image-processing-in-python-using-opencv-image-processing-bd899777e939
+
+https://py.processing.org/tutorials/pixels/
+
+https://opensource.com/article/19/3/python-image-manipulation-tools
+
+https://auth0.com/blog/image-processing-in-python-with-pillow/
+
+http://scipy-lectures.org/advanced/image_processing/
+
+https://py.processing.org/tutorials/pixels/
 
 ::
-
 
 2. DESCRIÇÃO GERAL
 
@@ -106,18 +130,26 @@ Ao salvar a imagem o usuário deverá usar o mecanismo WIMP para escolher onde q
 
 3.2 Requisitos Funcionais | BLOCO EXTRA
 
-3.2.1 Saturar e Desaturar a Imagem;
+3.2.1 Saturar e Desaturar a Imagem
+Ferramentas de aumentar a saturação e desaturar uma imagem são parametros computacionais diferentes MAS que são polos opostos da necessidade do usuário. Deve ser ofertado ao usuário como um slide -1 (desaturado) à +1 (mais saturado).
 
 3.2.2 Aumentar e diminuir o Contraste da Imagem;
+Para aumentar o contraste de uma imagem o sistema deve mapear o os pixels mais escuros e mais claros, E incrementar as distancias destes pixels. Quanto mais distante maio contraste, quanto menor distancia menor o contraste.
 
 3.2.3 Aumentar e Diminuir o Brilho da Imagem;
+Apenas a área de brilho seriá afetada;
+
 
 3.2.4 Aumentar ou Diminuir as Sombras da Imagem;
+Somente a área de sombre será afetada.
 
 3.2.5 Modificar a MATIZ da imagem;
+Modificar o o HUE/matiz de toda a imagem
 
-3.2.6 ....
+3.2.6 TINT
+Modificar a cor final da imagem. Esta ferramenta modificará o claro e o escuro para uma única cor a ser escolhida pelo usuário. Esta modificação poderá variar entre 0% de modficação ou 100& de modificação.
 
+3.2.7 
 
 
 3.2 Requisitos de Performance
