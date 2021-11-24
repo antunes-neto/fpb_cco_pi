@@ -5,7 +5,7 @@ HISTÓRICO DE REVISÃO
 V.0.0.1 | 27.10.2021 - Antunes Neto :: Estruturação inicial do Documento
 V 0.0.2 | 27.10.2021 - Antunes Neto :: Requisitos Bloco Comum
 V 0.1   | 17.11.2021 - Antunes Neto :: Requisitos Bloco Extra e revisão Bloco Comum
-
+V 1     | 24.11.2021 - Antunes Neto :: Requisitos De Perfornamce
 ::
 
 
@@ -14,7 +14,7 @@ Processamento de Imagem N2
 Especificação de Requisito de Software
 para IMAGE NODE
 
-V.0.1
+V.1
 
 
 Prof. Antunes Neto
@@ -103,6 +103,11 @@ http://scipy-lectures.org/advanced/image_processing/
 
 https://py.processing.org/tutorials/pixels/
 
+
+JAVA SCRIPT - React
+
+https://reactjs.org/
+
 ::
 
 2. DESCRIÇÃO GERAL
@@ -117,18 +122,20 @@ O projeto NODE IMAGE é um editor de imagem que manipula o tamanho da imagem, su
 
 Aqui será descrito os requisitos do sistema que o projeto NODE IMAGE deve apresentar como projeto N2 da disciplina de Processamento da Imagem. Os Requisitos são divididos entre Requisitps Funcionais e Requisitos de Performance. Os requisitos funcionais apresentão os recursos que o sistema deve apresentar, sendo subdividido em BLOCO COMUM e BLOCO EXTRA. Os Requisitos de Performance são as características de desempenho esperada do projeto.
 
-3.1 Requisitos Funcionais | BLOCO COMUM
+3.1 BLOCO COMUM | Requisitos Funcionais | 30% da nota
 
 3.1.1 importar Imagem
-O sistema deve importar utilizando-se de um sistema WIMP qualquer imagem presente no device do usuário. Ao importar uma imagem no sistema ela deve aparecer na prancheta da Área de trabalho. O tamanho da imagem importada deve se ajustar ao palco repeitando a maior dimensão, sendo esta ajustada para que toda a imagem seja visivel no palco.
+O sistema deve importar utilizando-se de um sistema WIMP qualquer imagem presente no device do usuário. Ao importar uma imagem no sistema ela deve aparecer na prancheta da Área de trabalho. O tamanho da imagem importada deve se ajustar ao palco repeitando a maior dimensão do palco, sendo a imagem ajustada para que toda a imagem seja visivel no palco. A transformação da imagem não pode ser destrutiva - se ela for escalonada para um menor tamanho o usuário poderá amplia-la para ajustar a imagem dentro do palco compondo dentro da área de trabalho.
 
 3.1.2 Área de trabalho / Prancheta
-A Área de trabalho é o espaço do sistema onde o usário irá manipular a posição e escala da imagem em relação a Prancheta. A prancheta é o lugar onde o sistema deve desenhar a imagem. A prancheta possui a propriedade de tamanho que será manipulada pelo usuário. O usuário poderá modificar o tamanho da imagem improtada, aumentando ou diminuindo sua escala porém sem que o sistema perca Informação do tamanho original da imagem.
+A Área de trabalho é o espaço do sistema onde o usário irá manipular a posição e escala da imagem em relação a Prancheta. A prancheta é o lugar onde o sistema deve desenhar a imagem. A prancheta possui a propriedade de tamanho que será manipulada pelo usuário. O usuário poderá modificar o tamanho da imagem importada, aumentando ou diminuindo sua escala porém sem que o sistema perca informação do tamanho original da imagem.
+
+Opção 2 - Escalonamento e Corte da imagem NA IMPORTAÇÃO sem reedição destas propriedades na aplicação dos esfeitos. Nesta versão o usuário deve re-importar a imagem para modificar o tamnho final do projeto.
 
 3.1.3 Salvar Imagem
 Ao salvar a imagem o usuário deverá usar o mecanismo WIMP para escolher onde quer salvar a imagem resultante da prancheta do sistema NODE IMAGE.
 
-3.2 Requisitos Funcionais | BLOCO EXTRA
+3.2 BLOCO EXTRA | Requisitos Funcionais
 
 3.2.1 Saturar e Desaturar a Imagem
 Ferramentas de aumentar a saturação e desaturar uma imagem são parametros computacionais diferentes MAS que são polos opostos da necessidade do usuário. Deve ser ofertado ao usuário como um slide -1 (desaturado) à +1 (mais saturado).
@@ -139,7 +146,6 @@ Para aumentar o contraste de uma imagem o sistema deve mapear o os pixels mais e
 3.2.3 Aumentar e Diminuir o Brilho da Imagem;
 Apenas a área de brilho seriá afetada;
 
-
 3.2.4 Aumentar ou Diminuir as Sombras da Imagem;
 Somente a área de sombre será afetada.
 
@@ -149,23 +155,35 @@ Modificar o o HUE/matiz de toda a imagem
 3.2.6 TINT
 Modificar a cor final da imagem. Esta ferramenta modificará o claro e o escuro para uma única cor a ser escolhida pelo usuário. Esta modificação poderá variar entre 0% de modficação ou 100& de modificação.
 
-3.2.7 
+3.2.7 Noise e Blur
+Aumentar o ruído da foto ou esmaeçer a foto
 
 
 3.2 Requisitos de Performance
+O usuário deve possuir feedback visual das modificações realizadas em tempo real.
+
+3.2.1 TEmpo de resposta no sistema
+UM Segundo
+
+3.2.2 Tempo de resposta de salvamento da imagem
+DOIS Segundos
+
+3.2.3 Tempo de resposta para abrir uma imagem nova
+DOIS segundos
+
+3.2.4 MOvimento de imagem
+A iamgem deve ser movimentada em inteiros de Pixel.
 
 
 3.3 Atributos do Sistema de Software
 
 3.3.1 Restrições do Design
+> Usar camadas de efeitos - o usuário pode mudar a ordem em que os efeitos são aplicados a imagem;
+> Ao 
 
 3.3.2 Interfaces
 
 3.3.2.1 Interface do Usuário
 
-3.3.2.2 Interface de Hardware
-
-3.4 Requisitos de Usabilidade
-
-3.5 Requisitos de Confiabilidade
+Ao critério dos alunos - Preferencialmente com Sliders e porcentagem de "força" do efeito.
 
