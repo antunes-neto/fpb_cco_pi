@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+                integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+                crossorigin="anonymous">
+
+        <!-- CANVAS -->
+        <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.0.2/dom-to-image.min.js"
+                integrity="sha512-nA1VGHwNgwrwlKYixIkuYapQmZXdbt9pxAHBjvfSPx2b95Sz/4+Qdk3B1vQ7kEQK/hxxv1BsxQrZV6HIg8ujrg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- FOLHAS DE ESTILOS -->
+        <link rel="stylesheet" href="./style/editores.css">
+        <link rel="stylesheet" href="./style/imagem.css">
+
+        <title>Processamento de Imagem N2</title>
+</head>
+
+<body>
+        <!-- SCRIPT PARA ALGUMAS ELEMENTOS DO BOOSTRAP -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+                crossorigin="anonymous"></script>
+
+        <div id="app">
+                <template-cabecalho></template-cabecalho>
+                <template-imagem> </template-imagem>
+                <template-editores> </template-editores>
+        </div>
+
+        <template id="cabecalho">
+                <div class="cabecalho">
+                        <h3 class="text-center mt-1 mb-0">
+                                {{titulo}}
+                        </h3>
+                        <p class="text-center mt-0 pt-0">
+                                {{alunos}}
+                        </p>
+                </div>
+        </template>
+
+        <template id="imagem">
+                <div class="imagem">
+                        <div class="border border-dark p-0">
+                                <button id="select-image">
+                                        <input type="file" id="photo-file" accept="image/png,image/jpeg"
+                                                multiple="false">
+                                        Selecionar Imagem
+                                </button>
+                        </div>
+
+                        <div class="exibir-imagem">
+                                <main>
+                                        <img class="imgExibir" id="photo-preview" draggable="false">
+                                        <div id="selection-tool"></div>
+                                </main>
+                        </div>
+                </div>
+        </template>
+
+        <template id="editores">
+                <div class="editores">
+                        <div id="accordionExample">
+                                <div class="w-100 text-center mt-1">
+                                        <small>Editores</small>
+                                        <hr class="mt-2 mb-1">
+                                </div>
+                                <!-- RECORTE -->
+                                <button id="btn_recortar" class="btn btn-primary w-100 p-0" type="button"
+                                        data-toggle="collapse" data-target="#collapseCorte" aria-expanded="false"
+                                        aria-controls="collapseCorte">
+                                        Recortar
+                                </button>
+                                <div class="collapse mt-1 naoSelecionavel" id="collapseCorte"
+                                        data-parent="#accordionExample">
+                                        <div class="card card-body p-1 card-recorte">
+                                                <p>OPÇÕES DE RECORTE</p>
+
+                                                <div class="input-group input-group-sm">
+                                                        <div class="input-group-prepend" style="width: 60%;">
+                                                                <span class="input-group-text w-100">Largura
+                                                                        (px)</span>
+                                                        </div>
+                                                        <input id="input-largura" type="number" disabled value
+                                                                aria-label="First name" class="form-control">
+                                                </div>
+                                                <div class="input-group input-group-sm mt-1">
+                                                        <div class="input-group-prepend" style="width: 60%;">
+                                                                <span class="input-group-text w-100">Altura
+                                                                        (px)</span>
+                                                        </div>
+                                                        <input id="input-altura" type="number" disabled
+                                                                aria-label="First name" class="form-control">
+                                                </div>
+                                                <div class="input-group input-group-sm mt-1">
+                                                        <div class="input-group-prepend" style="width: 60%;">
+                                                                <span class="input-group-text w-100">Posição X
+                                                                        (px)</span>
+                                                        </div>
+                                                        <input id="input-x" type="number" disabled
+                                                                aria-label="First name" class="form-control">
+                                                </div>
+                                                <div class="input-group input-group-sm mt-1">
+                                                        <div class="input-group-prepend" style="width: 60%;">
+                                                                <span class="input-group-text w-100">Posição Y
+                                                                        (px)</span>
+                                                        </div>
+                                                        <input id="input-y" type="number" disabled
+                                                                aria-label="First name" class="form-control">
+                                                </div>
+                                                <hr>
+                                                <div class="input-group input-group-sm">
+                                                        <button type="button" id="crop-image"
+                                                                class="btn btn-success btn-sm w-100">Recortar
+                                                                IMAGEM </button>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- AJUSTES -->
+                                <button id="btn_ajustes" class="btn btn-primary w-100 p-0 mt-2" type="button"
+                                        data-toggle="collapse" data-target="#collapseAjustes" aria-expanded="false"
+                                        aria-controls="collapseAjustes">
+                                        Ajustes
+                                </button>
+                                <div class="collapse mt-1 naoSelecionavel" id="collapseAjustes"
+                                        data-parent="#accordionExample">
+                                        <div class="card card-body p-1 card-recorte">
+                                                <button id="resetButton">
+                                                        Reiniciar
+                                                </button>
+                                                <div class="control-container">
+                                                        <div class="config border p-1">
+                                                                <label class="filter-label w-100">blur</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="blur" min="0" max="20"
+                                                                                value="0" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">brightness</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="brightness" min="0"
+                                                                                max="200" value="100" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">contrast</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="contrast" min="0"
+                                                                                max="200" value="100" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">grayscale</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="grayscale" min="0"
+                                                                                max="100" value="0" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">hue-rotate</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="hueRotate" min="0"
+                                                                                max="360" value="0" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">invert</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="invert" min="0"
+                                                                                max="100" value="0" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">opacity</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="opacity" min="0"
+                                                                                max="100" value="100" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">saturate</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="saturate" min="0"
+                                                                                max="200" value="100" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="config border p-1 mt-1">
+                                                                <label class="filter-label w-100">sepia</label>
+                                                                <div class="filter-control">
+                                                                        <input type="range" id="sepia" min="0" max="100"
+                                                                                value="0" />
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- SALVAR IMAGEM -->
+                                <div class="corte mt-2">
+                                        <button id="download" type="button">
+                                                Salvar Imagem
+                                        </button>
+                                </div>
+                        </div>
+
+
+                </div>
+        </template>
+
+        <!-- IMPORTA O VUE JS(Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e aplicativos de página única. Site:https://vuejs.org/) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+        <script>
+                Vue.component('template-cabecalho', {
+                        template: "#cabecalho",
+                        data() {
+                                return {
+                                        titulo: "Processamento de Imagem N2",
+                                        alunos: "Maycon Oliveira || Wesley Lima"
+                                }
+                        },
+
+                })
+                Vue.component('template-imagem', {
+                        template: "#imagem"
+                })
+                Vue.component('template-editores', {
+                        template: "#editores"
+
+                })
+                /* Instancia principal do Vue, permite renderizar dados declarativamente para o DOM usando a sintaxe de modelo simples*/
+                var app = new Vue({
+                        el: "#app",
+                })
+        </script>
+        <script src="./scripts/recortarImagem.js"></script>
+        <script src="./scripts/ajustes.js"></script>
+        <script src="./scripts/salvarImagem.js"></script>
+</body>
+<style>
+        body {
+                font-family: sans-serif, Arial;
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+        }
+
+        #app {
+                min-height: 100vh;
+                display: grid;
+                grid-template-rows: 70px 1fr;
+                grid-template-columns: 1fr 230px;
+                grid-template-areas:
+                        "cabecalho cabecalho"
+                        "imagem editores"
+
+        }
+
+        .cabecalho {
+                grid-area: cabecalho;
+                background-color: rgba(73, 72, 72, 0.953);
+                color: rgb(255, 255, 255);
+                border: solid 1px rgb(79, 79, 79);
+        }
+</style>
+
+</html>
