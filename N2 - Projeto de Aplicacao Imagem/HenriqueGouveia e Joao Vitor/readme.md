@@ -1,18 +1,23 @@
-##Node Image HJ V2
+#Node Image HJ V2
 
-Feito com JavaScript, Html e CSS. **Em produção**
+- Feito com JavaScript, Html e CSS. 
 
-###Para rodar com facilidade: plugin vscode live server: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+###Para rodar com facilidade adicione algum plugin como o vscode live server: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
-Manual para evitar os bugs existentes kkkkk:
- - começar a mexer nos filtros pelo último, pode bugar e ficar preta a imagem hadajksdah
- - a imagem é enviada por link
- - a bolinha preta embaixo da imagem é pra "redimensionar" ela arrastando
- - se aparecer o bug de ficar preta é o brilho que vai de 0 a 100, então, colocar no máximo pra ficar normal
- - O botão de salvar infelizmente por hora só abre o link da imagem
- 
+###Observações:
+- Primeiramente me desculpar pela estilização, quando mudavávamos muito começava a quebrar a aplicação;
+- Infelizmente não estamos conseguindo baixar a imagem com as mudanças dos filtros, só com o corte;
+
+Manual :
+- Clique para enviar a imagem a partir de um arquivo salvo no canto superior esquerdo;
+- Posicione o mouse em cima dela, note que mudará o cursor para uma cruz;
+- Clique e puxe da esquerda para direita para demarcar a área do corte;
+- O botão para relizar o corte aparecerá logo em seguida, clique nele;
+- O botão para exportar a imagem deverá aparecer agora;
+- você também pode aplicar os filtros na direita da tela;
+
 Fontes: 
 - https://gist.github.com/jonasgroendahl/efc5c880328860b9550ceab5753a6a55 (Only v1)
-- https://www.youtube.com/watch?v=frtfFfgrsk0&t=297s
 - https://www.fwait.com/how-to-download-image-on-button-click-using-javascript/ (Only v1)
-- https://gist.github.com/maykbrito/f88d1b3c59d14e56bfb06bc73828d9c8
+- https://gist.github.com/maykbrito/f88d1b3c59d14e56bfb06bc73828d9c8 (Final ver v2)
+- https://www.youtube.com/watch?v=frtfFfgrsk0&t=297s (Final ver v2)

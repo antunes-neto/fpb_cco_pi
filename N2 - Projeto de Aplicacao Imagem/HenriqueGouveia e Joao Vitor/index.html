@@ -10,69 +10,68 @@
 </head>
 
 <body>
- 
-        <div class="container">
-            <div class="main-outer">
-                <div class="main-left">
-                    <aside>
-                        <h3>Filtros de imagem</h3>
-                        <form id="slider-form">
-                            <p>
-                                <label for="gs">Escala de cinza</label>
-                                <input id="gs" name="gs" type="range" min="" max="100" value="0" class="slider">
-                            </p>
 
-                            <p>
-                                <label for="blur">Desfoque</label>
-                                <input id="blur" name="blur" type="range" min="0" max="" value="0" class="slider">
-                            </p>
+    <div class="">
+        <div class="">
+            <div class="">
+                <aside>
+                    <h3>Filtros de imagem</h3>
+                    <form id="slider-form">
+                        <p>
+                            <label for="gs">Escala de cinza</label>
+                            <input id="gs" name="gs" type="range" min="" max="100" value="0" class="slider">
+                        </p>
 
-                            <p>
-                                <label for="hue-rotate">Matiz</label>
-                                <input id="hue-rotate" name="hue-rotate" type="range" min="0" max="" value="0"
-                                    class="slider">
-                            </p>
+                        <p>
+                            <label for="blur">Desfoque</label>
+                            <input id="blur" name="blur" type="range" min="0" max="" value="0" class="slider">
+                        </p>
 
-                            <p>
-                                <label for="sepia">Sepia</label>
-                                <input id="sepia" name="sepia" type="range" min="0" max="" value="0" class="slider">
-                            </p>
-                            <p>
-                                <label for="brightness">Brilho</label>
-                                <input id="brightness" name="brightness" type="range" min="100" max="200" value="0"
-                                    class="slider">
-                                    <p id="brightval" class="show_value"></p>
-                            </p>
+                        <p>
+                            <label for="hue-rotate">Matiz</label>
+                            <input id="hue-rotate" name="hue-rotate" type="range" min="0" max="" value="0" class="slider">
+                        </p>
 
-                            <button type="reset">Reset</button>
-                        </form>
-                    </aside>
-                </div>
+                        <p>
+                            <label for="sepia">Sepia</label>
+                            <input id="sepia" name="sepia" type="range" min="0" max="" value="0" class="slider">
+                        </p>
+                        <p>
+                            <label for="brightness">Brilho</label>
+                            <input id="brightness" name="brightness" type="range" min="100" max="200" value="0" class="slider">
+                            <p id="brightval" class="show_value"></p>
+                        </p>
 
-                <div class="main-right" id="myform">
-
-                    <button id="select-image">
-                        <input type="file" id="photo-file">
-                            Escolher Image salva
-                    </button>
-                 
-                    <button id="crop-image">Cortar Imagem</button>
-                    <button id="download">Exportar Imagem</button>
-
-                    <div id="selection-tool">
-
-                    </div>
-                    
-                </div>
-
-              
-                    <img src="" id="targetimage" draggable="false">
-         
-
-              
+                        <button type="reset">Reset</button>
+                    </form>
+                </aside>
             </div>
 
+            <div id="imagem">
+                <div class="" id="myform">
+
+                    <button id="select-image">
+                            <input type="file" id="photo-file">
+                                Escolher Image salva
+                        </button>
+    
+                    <button id="crop-image">Cortar Imagem</button>
+                    <button id="download">Exportar Imagem</button>
+    
+                    <div id="selection-tool">
+                        
+                    </div>
+    
+                </div>
+               
+                
+            </div>
+            <img src="" id="targetimage" draggable="false">
+
+
         </div>
+
+    </div>
     <script src="js/filters.js"></script>
     <script src="js/scripts.js"></script>
 
