@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatuble" content="ie=edge">
     <link href="css/style.css" rel="stylesheet">
-    <title>Node Image HJ</title>
+    <title>Node Image HJ v2</title>
 </head>
+
 <body>
-    <section class="main">
+ 
         <div class="container">
             <div class="main-outer">
                 <div class="main-left">
                     <aside>
-                        <h3>Image Filters</h3>
+                        <h3>Filtros de imagem</h3>
                         <form id="slider-form">
                             <p>
-                                <label for="gs">Grayscale</label>
+                                <label for="gs">Escala de cinza</label>
                                 <input id="gs" name="gs" type="range" min="" max="100" value="0" class="slider">
                             </p>
-                        
+
                             <p>
-                                <label for="blur">Blur</label>
+                                <label for="blur">Desfoque</label>
                                 <input id="blur" name="blur" type="range" min="0" max="" value="0" class="slider">
                             </p>
 
                             <p>
-                                <label for="hue-rotate">Hue-Rotate</label>
-                                <input id="hue-rotate" name="hue-rotate" type="range" min="0" max="" value="0" class="slider">
+                                <label for="hue-rotate">Matiz</label>
+                                <input id="hue-rotate" name="hue-rotate" type="range" min="0" max="" value="0"
+                                    class="slider">
                             </p>
 
                             <p>
@@ -35,33 +38,45 @@
                                 <input id="sepia" name="sepia" type="range" min="0" max="" value="0" class="slider">
                             </p>
                             <p>
-                                <label for="brightness">Brightness</label>
-                                <input id="brightness" name="brightness" type="range" min="0" max="" value="0" class="slider">
+                                <label for="brightness">Brilho</label>
+                                <input id="brightness" name="brightness" type="range" min="100" max="200" value="0"
+                                    class="slider">
+                                    <p id="brightval" class="show_value"></p>
                             </p>
-                            
-                            <button type="reset" >Reset</button>
+
+                            <button type="reset">Reset</button>
                         </form>
                     </aside>
                 </div>
-                <div class="main-right">
-                    <form id="myform">
-                        <input type="text" placeholder="Image URL" id="onlineurl">
-                        <button type="submit">Load Image</button>
-                        <button id="download" onclick="">Save Image</button>
-                    </form>
-                    <div class="img-area">
-                        
-                        <img class="imagem" src="images" id="targetimage" alt="">
-                        <div class="resizer ne"></div>
-                       
+
+                <div class="main-right" id="myform">
+
+                    <button id="select-image">
+                        <input type="file" id="photo-file">
+                            Escolher Image salva
+                    </button>
+                 
+                    <button id="crop-image">Cortar Imagem</button>
+                    <button id="download">Exportar Imagem</button>
+
+                    <div id="selection-tool">
+
                     </div>
+                    
                 </div>
+
+              
+                    <img src="" id="targetimage" draggable="false">
+         
+
+              
             </div>
-            
+
         </div>
-    </section>
-    <script src="js/main.js"></script>
-    <script src="js/FileSaver.js"></script>
-    <script src="js/rezise.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/scripts.js"></script>
+
+
 </body>
+
 </html>

@@ -17,7 +17,7 @@ body {
 }
 .main-outer {
   width: 100%;
-  float: left;
+
   padding: 3em;
 }
 .main-left {
@@ -90,7 +90,7 @@ body {
 
 .main-right {
   width: 70%;
-  float: right;
+  float: center;
 }
 
 .main-right .img-area {
@@ -104,7 +104,6 @@ body {
 
 .main-right input[type="text"] {
   width: 79%;
-  margin-bottom: 20px;
   height: 45px;
   padding: 10px;
 }
@@ -114,13 +113,15 @@ body {
   background: #333;
   border: none;
   height: 45px;
-  padding: 0 26px;
+  padding: 0 10px;
   font-size: 15px;
   color: #fff;
   cursor: pointer;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
 }
 
-.img-area{
+#img-area{
   width: 79%;
   margin-top: 50px;
   height: 45px;
@@ -129,34 +130,16 @@ body {
   border-radius: 5px;
 }
 
- .resizer  {
- 
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: black;
-  z-index: 2;
-  }  
-
-.resizer.nw {
-top:-1px;
-left: -1px;
-Cursor: nw-resize;
+#photo-file{
+  display: none;
 }
 
-.resizer.ne {
-top: -1px;
-right: -1px;
-Cursor: ne-resize;
-}
-.resizer.sw {
-bottom: -1px;
-left: -1px;
-Cursor: sw-resize;
+#selection-tool{
+  display: none;
+  position: fixed;
+  border: 2px dashed green;
 }
 
-.resizer.se {
-bottom: -1px;
-right: -1px;
-Cursor: se-resize;
+#crop-image, #download{
+  display: none;
 }
