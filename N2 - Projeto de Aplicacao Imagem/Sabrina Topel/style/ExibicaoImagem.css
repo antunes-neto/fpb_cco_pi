@@ -1,0 +1,51 @@
+
+@import url(./body.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.imagem {
+  grid-area: imagem;
+  height: 100%;
+  width: 100%;
+}
+
+.imagem .exibir-imagem {
+  padding: 7px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 96%;
+  width: 100%;
+}
+#photo-file {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+#selection-tool {
+  position: fixed;
+  display: none;
+  border: 2px dashed rgb(6, 67, 6);
+}
+
+
+#select-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}

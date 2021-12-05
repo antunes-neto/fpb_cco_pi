@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- --------- Bootstrap CSS --------- -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+                integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+                crossorigin="anonymous">
+
+        <!-- --------- CANVAS --------- -->
+        <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.0.2/dom-to-image.min.js"
+                integrity="sha512-nA1VGHwNgwrwlKYixIkuYapQmZXdbt9pxAHBjvfSPx2b95Sz/4+Qdk3B1vQ7kEQK/hxxv1BsxQrZV6HIg8ujrg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- --------- ARQUIVOS CSS --------- -->
+        <link rel="stylesheet" href="./style/body.css">
+        <link rel="stylesheet" href="./style/Editar.css">
+        <link rel="stylesheet" href="./style/ExibicaoImagem.css">
+
+        <title>Processamento de Imagem N2</title>
+</head>
+
+<body>
+
+        <br />
+        <h3 style="margin: auto;">Sabrina Topel - Processamento de Imagem N2</h3>
+        <br /><br />
+        <!--  -------- CONTEUDO  -------- -->
+        <div class="container-conteudo">
+          <div class="row" >
+            <div class="col-md-2"></div>
+
+            <div class="col-md-2">
+                <div id="accordionExample">
+                        
+                        <!-- ------------------------------------ RECORTE --------------------------------------------- -->
+                        <button id="btn_recortar" class="btn btn-primary w-100 p-0" type="button"
+                                data-toggle="collapse" data-target="#collapseCorte" aria-expanded="false"
+                                aria-controls="collapseCorte">
+                                CORTAR IMAGEM
+                        </button>
+                        <div class="collapse mt-1 naoSelecionavel" id="collapseCorte"
+                                data-parent="#accordionExample">
+                                <div class="card card-body p-1 card-recorte">
+                                        <div class="input-group input-group-sm mt-1">
+                                                <div class="input-group-prepend" style="width: 60%;">
+                                                        <span class="input-group-text w-100">Altura
+                                                                (px)</span>
+                                                </div>
+                                                <input id="input-altura" type="number" disabled
+                                                        aria-a="First name" class="form-control">
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend" style="width: 60%;">
+                                                        <span class="input-group-text w-100">Largura
+                                                                (px)</span>
+                                                </div>
+                                                <input id="input-largura" type="number" disabled value
+                                                        aria-a="First name" class="form-control">
+                                        </div>
+                                      
+                                        
+                                        <div class="input-group input-group-sm mt-1">
+                                                <div class="input-group-prepend" style="width: 60%;">
+                                                        <span class="input-group-text w-100">Posição Y
+                                                                (px)</span>
+                                                </div>
+                                                <input id="input-y" type="number" disabled
+                                                        aria-a="First name" class="form-control">
+                                        </div>
+                                        <div class="input-group input-group-sm mt-1">
+                                                <div class="input-group-prepend" style="width: 60%;">
+                                                        <span class="input-group-text w-100">Posição X
+                                                                (px)</span>
+                                                </div>
+                                                <input id="input-x" type="number" disabled
+                                                        aria-a="First name" class="form-control">
+                                        </div>
+                                        
+                                        <br>
+
+                                        <div class="input-group input-group-sm">
+                                                <button type="button" id="crop-image"
+                                                        class="btn btn-success btn-sm w-100 meio" >CORTAR IMAGEM
+                                                         </button>
+                                        </div>
+                                       
+                                </div>
+                        </div>
+                          <!-- ------------------------------- FIM RECORTE --------------------------------------------- -->
+
+                         <!-- ------------------------------------ FILTROS --------------------------------------------- -->
+                        <button id="btn_ajustes" class="btn btn-primary w-100 p-0 mt-2" type="button"
+                                data-toggle="collapse" data-target="#collapseAjustes" aria-expanded="false"
+                                aria-controls="collapseAjustes">
+                                                FILTROS
+                        </button>
+                        <div class="collapse mt-1 naoSelecionavel" id="collapseAjustes"
+                                data-parent="#accordionExample">
+                                <div class="card card-body p-1 card-recorte">
+                                       
+                                        <div class="control-container">
+                                               
+                                                <!-- -------------------------- BORRAO -------------------------- -->
+                                                <br>
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Borrão</a>
+                                                                <input type="range" id="blur" min="0" max="20"
+                                                                        value="0" />
+                                                        </div>
+                                              <!-- -------------------------- FIM BORRAO -------------------------- -->
+
+                                                 <!-- -------------------------- BRILHO -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Brilho</a>
+                                                                <input type="range" id="brightness" min="0"
+                                                                        max="200" value="100" />
+                                                        </div>
+                                              <!-- -------------------------- FIM BORRAO -------------------------- -->
+                                                      
+                                              <!-- -------------------------- CONTRASTE -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Contraste</a>
+                                                                <input type="range" id="contrast" min="0"
+                                                                        max="200" value="100" />
+                                                        </div>
+                                               <!-- -------------------------- FIM CONTRASTE -------------------------- -->
+                                               
+                                                       
+                                               <!-- -------------------------- ESCALA DE CINZA -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Escala de Cinza</a>
+                                                                <input type="range" id="grayscale" min="0"
+                                                                        max="100" value="0" />
+                                                        </div>
+                                                <!-- -------------------------- FIM ESCALA DE CINZA -------------------------- -->
+                                               
+                                                        
+                                                <!-- -------------------------- COLORIR -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Colorir</a>
+                                                                <input type="range" id="hueRotate" min="0"
+                                                                        max="360" value="0" />
+                                                        </div>
+                                                <!-- -------------------------- FIM COLORIR -------------------------- -->
+
+                                                <!-- -------------------------- NEGATIVO -------------------------- -->
+                                                        
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Negativo</a>
+                                                                <input type="range" id="invert" min="0"
+                                                                        max="100" value="0" />
+                                                        </div>
+                                               <!-- -------------------------- FIM NEGATIVO -------------------------- -->
+                                                
+                                                  <!-- -------------------------- OPACIDADE -------------------------- -->      
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Opacidade</a>
+                                                                <input type="range" id="opacity" min="0"
+                                                                        max="100" value="100" />
+                                                        </div>
+                                                <!-- -------------------------- FIM OPACIDADE -------------------------- -->
+                                              
+                                                        <!-- -------------------------- SATURACAO -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro" >Saturação</a>
+                                                                <input type="range" id="saturate" min="0"
+                                                                        max="200" value="100" />
+                                                        </div>
+                                              
+                                                <!-- -------------------------- FIM SATURACAO -------------------------- -->
+                                                       
+                                                <!-- -------------------------- SERPIA -------------------------- -->
+                                                        <div class="filter-control">
+                                                                <a class="texto-filtro">Serpia</a>
+                                                                <input type="range" id="sepia" min="0" max="100"
+                                                                        value="0" />
+                                                        </div>
+                                                <!-- -------------------------- FIM SERPIA -------------------------- -->
+                                                        <br>
+
+                                                <!-- -------------------------- REVETER ALTERACOES -------------------------- -->
+                                                <button id="resetButton" class="btn btn-primary" >
+                                                        REVETER ALTERAÇÕES
+                                                </button>
+                                                 <!-- -------------------------- FIM REVETER ALTERACOES -------------------------- -->
+                                        </div>
+                                </div>
+                        </div>
+
+                         <!-- ------------------------------------ FIM FILTROS --------------------------------------------- -->
+
+                         <!-- ------------------------------------ DOWNLOAD --------------------------------------------- -->
+                        <div class="corte mt-2">
+                                <button id="download" type="button" class="btn btn-success w-100 p-0">
+                                        SALVAR IMAGEM
+                                </button>
+                        </div>
+                         <!-- ------------------------------------ FIM DOWNLOAD --------------------------------------------- -->
+                </div>
+            </div>
+
+             <!-- ------------------------------------ SELECIONAR E EXIBIR --------------------------------------------- -->
+            <div class="col-md-5">
+                <div class="imagem">
+                        <div class="border border-dark p-0">
+                                <button id="select-image" class="btn btn-primary w-100 p-0">
+                                        <input type="file" id="photo-file" accept="image/png,image/jpeg"
+                                                multiple="false">
+                                        SELECIONAR IMAGEM
+                                </button>
+                        </div>
+
+                        <div class="exibir-imagem">
+                                <main>
+                                        <img class="imgExibir" id="FotoPrevia" draggable="false">
+                                        <div id="selection-tool"></div>
+                                </main>
+                        </div>
+                </div>
+            </div>
+             <!-- ------------------------------------ FIM SELECIONAR E EXIBIR --------------------------------------------- -->
+          </div>
+        </div>
+            
+
+       
+ <!-- ------------------------------------ SCRIPTS e STYLES EXTRAS --------------------------------------------- -->
+        <div id="Conteudo"></div>
+        <script src="./scripts/Cortar.js"></script>
+        <script src="./scripts/Filtros.js"></script>
+        <script src="./scripts/Download.js"></script>
+
+         <!-- SCRIPT PARA ALGUMAS ELEMENTOS DO BOOSTRAP -->
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+         crossorigin="anonymous"></script>
+</body>
+<style>
+     #Conteudo {
+                min-height: 100vh;
+                display: grid;
+                grid-template-rows: 70px 1fr;
+                grid-template-columns: 1fr 230px;
+                grid-template-areas:
+                        "cabecalho cabecalho"
+                        "imagem editores"
+
+        }
+        body {
+                font-family: sans-serif, Arial;
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+        }
+
+</style>
+
+</html>
