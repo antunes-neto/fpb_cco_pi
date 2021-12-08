@@ -1,1 +1,2 @@
-Inicio
+Abrir .HTML
+Selecionar arquivo de foto com extensão .png
